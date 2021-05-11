@@ -1,0 +1,3 @@
+// Make sure to have your youtube channels in the format:
+youtube-channel-url/videos
+// Please remove these lines once you start running the program

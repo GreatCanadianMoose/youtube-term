@@ -1,0 +1,36 @@
+v0.3.1 Prepping for release!
+	- Polished up the code
+	- Added better programs
+	- Added a prompt to the client
+	- Made a proper README.txt file with instructions
+
+v0.3.0 Client/Server!
+	- Simple client/server model
+	- Records tempatures
+	- Single user, single server
+	- Just FTP commands
+
+v0.2.0 Multi-Threading!
+	- Initially supports 4 threads
+	- This was a lot of fun to make and the first multi-threaded program I've ever made!
+	- Has some flaws:
+		- if one thread is downloading, the other 3 threads have to wait until it's done
+
+v0.1.0 Lighting McQueen!
+	- Interrupts youtube-dl call if date not found
+	- So much faster my goodness
+	- 56 channels with 2 downloads in 40 minutes
+	- Though when I tested it it was one channel every 8 seconds
+
+v0.0.2 Logs to file!
+	- Logs time and command to a text file
+	- Took too long to code because I have no brain power
+	- Super small update, don't worry about it
+
+
+V0.0.1 Initial version that works!
+	- Reads from .txt file a list of channels to download
+	- Downloads them with youtube-dl
+	- Doesn't stop after noticing there are no new videos to download (just runs the youtube-dl command)
+	- Runs on minimal RAM Raspbian, Neofetch and program run at max 75MB RAM
+	- Fairly CPU intensive, uses 17-25% of Raspberry Pi's CPU

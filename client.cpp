@@ -1,5 +1,5 @@
 // Author: Luca Salvatore
-// Date May 10th, 2021
+// Date May 13th, 2021
 //
 // This is the client that you should run on your main computer
 // You compile it with:
@@ -25,10 +25,11 @@ int main(){
 	// Initialize the commands
 	string rmCMD = "ssh " + IP + " 'rm ~/youtube-term/FTP/*'";
 	string scpCMD = "scp " + IP + ":~/youtube-term/FTP/* ~/Videos/youtube-term";
-
+	system("mkdir ~/Videos/youtube-term");
 	while(true){ // Litterally run the commands forever
 		system(scpCMD.c_str());
 		system(rmCMD.c_str());
+		system("sleep 180");
 	}
 	return 69; // This return should never be called... only interupts
 }

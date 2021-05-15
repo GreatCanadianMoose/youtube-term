@@ -1,3 +1,11 @@
+v0.3.2 User-oriented!
+	- Made a server install script
+	- Made threads able to be changed with a single variable before compiling
+	- Added delay to the client so it doesn't eat up all the CPU
+	- Supports between 1 to 2147483647 cores
+	- If you have 2147483647, why are you running this program?
+	- Updated README
+
 v0.3.1 Prepping for release!
 	- Polished up the code
 	- Added better programs

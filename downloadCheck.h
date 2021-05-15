@@ -35,7 +35,7 @@ void downloadCheck(string channel){
 	// use buffer to read and add to result
       		if (fgets(buffer, 128, pipe) != NULL){result += buffer;}
 			size_t found = result.find("upload date is not in range"); // If it sees this string, it aborts the command, breaking
-			if(found != string::npos){break;}			   // the pipe and exiting
+			if(found != string::npos){pclose(pipe);break;}			   // the pipe and exiting
 		}								   // This prevents youtube-dl from trying to download videos
 	pclose(pipe);								   // that are outside of the current date, because it has to
 										   // download each video's webpage in order to figure out

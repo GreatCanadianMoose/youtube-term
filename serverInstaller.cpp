@@ -10,7 +10,7 @@ int main(){
 	cout << "Welcome to the youtube-term setup!\n";
 
 	cout << "Creating directory tree...\n";
-	system("mkdir ~/youtube-term/FTP ~/youtube-term/source-code ~/youtube-term/README");
+	system("mkdir ~/youtube-term ~/youtube-term/FTP ~/youtube-term/source-code ~/youtube-term/README");
 
 	cout << "Downloading youtube-dl...\n";
 	system("wget youtube-dl.org/downloads/latest/youtube-dl");
@@ -22,7 +22,7 @@ int main(){
 	system("mv CHANGELOG.txt ~/youtube-term/README && mv README.txt ~/youtube-term/README && mv *.cpp ~/youtube-term/source-code && mv *.h ~/youtube-term/source-code && mv y* ~/youtube-term");
 
 	cout << "Cleaning up...";
-	system("rm * && rmdir .");
+	system("rm * && rmdir ../v0.3.2");
 
 	cout << "Setup complete! Please make sure you have passwordless SSH access between your client and your server.\n";
 	cout << "Follow the guide here: \n";

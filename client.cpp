@@ -23,8 +23,8 @@ int main(){
 	cout << endl;
 
 	// Initialize the commands
-	string rmCMD = "ssh " + IP + " 'rm ~/youtube-term/FTP/*'";
-	string scpCMD = "scp " + IP + ":~/youtube-term/FTP/* ~/Videos/youtube-term";
+	string rmCMD = "ssh " + IP + " 'rm ~/youtube-term/v0.3.2/FTP/*'";
+	string scpCMD = "scp " + IP + ":~/youtube-term/v0.3.2/FTP/* ~/Videos/youtube-term";
 	system("mkdir ~/Videos/youtube-term");
 	while(true){ // Litterally run the commands forever
 		system(scpCMD.c_str());

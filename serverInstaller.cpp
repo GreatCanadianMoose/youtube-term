@@ -10,21 +10,21 @@ int main(){
 	cout << "Welcome to the youtube-term setup!\n";
 
 	cout << "Creating directory tree...\n";
-	system("mkdir ~/youtube-term ~/youtube-term/FTP ~/youtube-term/source-code ~/youtube-term/README");
+	system("mkdir ~/youtube-term ~/youtube-term/v0.3.2  ~/youtube-term/v0.3.2/FTP ~/youtube-term/v0.3.2/source-code ~/youtube-term/v0.3.2/README");
 
 	cout << "Downloading youtube-dl...\n";
 	system("wget youtube-dl.org/downloads/latest/youtube-dl");
 
-	cout << "Compiling server code...";
+	cout << "Compiling server code...\n";
 	system("g++ server.cpp -std=c++11 -pthread -o youtube-term");
 
-	cout << "Moving files...";
-	system("mv CHANGELOG.txt ~/youtube-term/README && mv README.txt ~/youtube-term/README && mv *.cpp ~/youtube-term/source-code && mv *.h ~/youtube-term/source-code && mv y* ~/youtube-term");
+	cout << "Moving files...\n";
+	system("mv CHANGELOG.txt ~/youtube-term/v0.3.2/README && mv README.txt ~/youtube-term/v0.3.2/README && mv *.cpp ~/youtube-term/v0.3.2/source-code && mv *.h ~/youtube-term/v0.3.2/source-code && mv y* ~/youtube-term/v0.3.2");
 
-	cout << "Cleaning up...";
-	system("rm * && rmdir ../v0.3.2");
+	cout << "Cleaning up...\n";
+	system("rm *");
 
 	cout << "Setup complete! Please make sure you have passwordless SSH access between your client and your server.\n";
 	cout << "Follow the guide here: \n";
-	cout << "www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md";
+	cout << "www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md\n";
 }

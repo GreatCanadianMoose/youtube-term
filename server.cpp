@@ -1,5 +1,5 @@
 // Author:  Luca Salvatore
-// Date:    May 14th, 2021
+// Date:    May 21st, 2021
 // Purpose: Downloads youtube videos given a list of channels to download from
 // g++ -std=c++11 -pthread is required to compile
 // Number of threads to use:
@@ -78,24 +78,7 @@ int main(){
 			for(int i = 0; i < numThreads; i++){
 				thr[i].join();
 			}
-			time(&finish);
 
-			// A video downloaded in from one or more of the past 4 threads will have a last modified date within the past
-			// difftime(finish, start) + 1 minutes (the integer rounds things down) so any new file whose extension is not
-			// *.txt, *.cpp, *.h or the youtube-dl/youtube-term executables
-			// It also updates the finish time, to account for long amounts of times that the find command runs for
-
-			int loop = 0;
-                        while(loop <= difftime(finish, start)/60 + 1){
-
-                                string rum =  "find . -cmin " + to_string(loop) + " -maxdepth 1 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -print0 | xargs -0 cp -t ~/youtube-term/FTP";
-                                exec(rum);
-
-                                loop ++;
-                                time(&finish);
-                        }
-
-			exec("find . -mmin +1440 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -delete");
 
 			// This last section logs tempature by running the cat command on the file, then saving it to tempature.txt
 			// This allows a sysadmin to keep an eye on tempatures over time in case there may be a thermal issue
@@ -107,7 +90,14 @@ int main(){
 
 			file_out.close(); // Close temp log file
 		}
-		n += 1;
+
+			time(&finish);
+			string rum = "find . -maxdepth 1 -cmin "+ to_string((int)(difftime(start,finish)/60) - 2) + " -type f ! -name '*.txt' ! -name '*.cpp' ! -name '*.h'  ! -name 'youtube-dl' ! -name 'youtube-term' -print0 | xargs -0 cp -t ~/youtube-term/v0.3.2/FTP";
+//                        string rum =  "find . -cmin -" + to_string(difftime(start,finish)/60 + 1) + " -maxdepth 1 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -print0 | xargs -0 cp -t ~/youtube-term/v0.3.2/FTP";
+
+                        exec(rum);
+			exec("find . -mmin +1440 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -delete");
+
 	}
 	return 0;
 }

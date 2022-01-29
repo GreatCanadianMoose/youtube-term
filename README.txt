@@ -1,6 +1,7 @@
-Author: Luca Salvatore
+Author: Great Canadian Moose
 Date: May 13th, 2021
-Contact: youtubeTermProject@email.com
+Contact: Hawker on Libera.chat
+	(IRC Network)
 
 Introduction to youtube-term:
 	youtube-term is a utility that allows a server to monitor a list of youtube channels, and download any new videos. The client will

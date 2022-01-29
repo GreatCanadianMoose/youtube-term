@@ -1,5 +1,5 @@
-// Author:  Luca Salvatore
-// Date:    May 21st, 2021
+// Author:  Great Canadian Moose
+// Date:    January 29th 2022
 // Purpose: Downloads youtube videos given a list of channels to download from
 // g++ -std=c++11 -pthread is required to compile
 // Number of threads to use:
@@ -38,25 +38,19 @@ int main(){
 	int n = 1;		// Loop variable to keep track of the number of time this runs
 	LinkedList manipList; 	// This is the linked list that I use to access the ytsubs.txt periodically
 	while(n > -1){ 		// Forever do inside the loop.
-
-
-
 		time(&start);
-
 		ifstream subList("ytsubs.txt"); // open the ytsubs.txt file to read channel links from
-
 		string channel;
 
-		while(getline(subList, channel)){ // For each line in ytsubs, take one line and add it to the linked list.
-			manipList.insertHead(channel);
-		}
+		// populate a manipList
+		while(getline(subList, channel)){ manipList.insertHead(channel);}
 
 		subList.close(); // close sublist file don't want bad things to happen to it
 
 		int modulusLoop = 0;
-
 		if(numThreads > 1){
-			while(modulusLoop <= manipList.size() % numThreads){ 	// To keep the program from running into a segmentation fault, the modulus MUST
+			int modulusBoi = manipList.size() % numThreads;
+			while(modulusLoop < modulusBoi){ 	// To keep the program from running into a segmentation fault, the modulus MUST
 				downloadCheck(manipList.getAt(0)); 		// be of the same number of threads you run
 				manipList.deleteHead();		   		// I will add a variable at the top of the program that automatically handles the
 				modulusLoop ++;			    		// multithreading so you don't have to edit this section.
@@ -73,7 +67,6 @@ int main(){
 				thr[i] = thread(downloadCheck, manipList.getAt(0));
 				manipList.deleteHead();
 			}
-
 
 			for(int i = 0; i < numThreads; i++){
 				thr[i].join();

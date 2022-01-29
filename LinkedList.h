@@ -1,4 +1,4 @@
-// Author:       Luca Salvatore
+// Author:       Great Canadian Moose
 // Last edit:    April 23rd, 2021
 
 // I lightly modified this from the original
@@ -242,8 +242,6 @@ LinkedList::LinkedList(const LinkedList &orig) {
 //Description: Deallocate each node in the entire linked list.
 //Note: A little different than we have seen before.
 LinkedList::~LinkedList() {
-
-	cout << "===========Testing Destructor============\n";
 	int i = 0;
 	int len = size();
 	while(i < len){

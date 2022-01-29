@@ -1,3 +1,5 @@
+// Modified exec.h to suit my needs
+
 void downloadCheck(string channel){
 
 	string lengthTime;
@@ -19,7 +21,7 @@ void downloadCheck(string channel){
 			strDay = "0" + to_string(day);  // The year is fine, no issues there
 	}else{ strDay = to_string(day);}
 
-	string prt1 = "python3 youtube-dl --date " + to_string(year) + strMonth + strDay + " "; // This is the first part of the command
+	string prt1 = "python3 yt-dlp --date " + to_string(year) + strMonth + strDay + " "; // This is the first part of the command
 
 	string command = prt1 + channel; // This next bit just converts string to a char... I am not comfortable with them at this point
 
@@ -42,5 +44,5 @@ void downloadCheck(string channel){
 										   // that it can't download it, for youtube channels with
 										   // hundreds or even thousands of videos, this is a huge
 										   // issue.
-	this_thread::sleep_for(std::chrono::milliseconds(5)); // Sleep for a touch for everything to settle just incase
+	this_thread::sleep_for(std::chrono::milliseconds(1)); // Sleep for a touch for everything to settle just incase
 }

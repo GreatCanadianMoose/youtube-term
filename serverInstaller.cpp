@@ -22,8 +22,7 @@ int main(){
         system("g++ server.cpp -std=c++11 -pthread -o youtube-term");
 
         cout << "Moving files...\n";
-        system("mv CHANGELOG.txt ~/youtube-term/v0.3.2/README && mv README.txt ~/youtube-term/v0.3.2/README && mv *.cpp ~/youtube-term/v0.3.2/source-code && mv *.h ~/y$
-
+	system("mv CHANGELOG.txt ~/youtube-term/v0.3.2/README && mv README.txt ~/youtube-term/v0.3.2/README && mv *.cpp ~/youtube-term/v0.3.2/source-code && mv *.h ~/youtube-term/v0.3.2/source-code && mv y* ~/youtube-term/v0.3.2");
         cout << "Cleaning up...\n";
         system("rm *");
 

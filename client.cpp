@@ -1,4 +1,4 @@
-// Author: Luca Salvatore
+// Author: Great Canadian Moose
 // Date May 13th, 2021
 //
 // This is the client that you should run on your main computer

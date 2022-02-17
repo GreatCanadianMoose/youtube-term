@@ -40,10 +40,10 @@ int main(){
 	while(n > -1){ 		// Forever do inside the loop.
 		time(&start);
 		ifstream subList("ytsubs.txt"); // open the ytsubs.txt file to read channel links from
-		string channel + "/videos";
+		string channel;
 
 		// populate a manipList
-		while(getline(subList, channel)){ manipList.insertHead(channel);}
+		while(getline(subList, channel)){ manipList.insertHead(channel + "/videos");}
 
 		subList.close(); // close sublist file don't want bad things to happen to it
 

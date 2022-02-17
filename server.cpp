@@ -40,7 +40,7 @@ int main(){
 	while(n > -1){ 		// Forever do inside the loop.
 		time(&start);
 		ifstream subList("ytsubs.txt"); // open the ytsubs.txt file to read channel links from
-		string channel;
+		string channel + "/videos";
 
 		// populate a manipList
 		while(getline(subList, channel)){ manipList.insertHead(channel);}

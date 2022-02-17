@@ -10,7 +10,7 @@ int main(){
         cout << "Welcome to the youtube-term setup!\n";
 
         cout << "Removing pre-existing youtube-term files!" << endl;
-        system("rm -rvf ~/youtube-term/v0.3.2");
+        system("rm -rvf ~/youtube-term/*");
 
         cout << "Creating directory tree...\n";
         system("mkdir ~/youtube-term ~/youtube-term/v0.3.2  ~/youtube-term/v0.3.2/FTP ~/youtube-term/v0.3.2/source-code ~/youtube-term/v0.3.2/README");

@@ -1,3 +1,8 @@
+v0.3.2a Fixed broken stuff
+	- Hey guys sorry I left everything broken for like... a year
+	- School's rough, but after deleting 6 hours of coding I'm a bit
+	- tired of this so I took a break. This should work as intended
+
 v0.3.2 User-oriented!
 	- Made a server install script
 	- Made threads able to be changed with a single variable before compiling

@@ -15,20 +15,20 @@ using namespace std;
 int main(){
 
 	// Initialize string to store the location of the server
-	string IP;
+	string IP = "pi@192.168.2.38";
 
 	// Friendly little prompt
-	cout << "What hostname and IP address is the server located at?\n\t--> ";
-	cin >> IP;
-	cout << endl;
+	// cout << "What hostname and IP address is the server located at?\n\t--> ";
+	// cin >> IP;
+	// cout << endl;
 
 	// Initialize the commands
-	string rmCMD = "ssh " + IP + " 'rm ~/youtube-term/v0.3.2/FTP/*'";
-	string scpCMD = "scp " + IP + ":~/youtube-term/v0.3.2/FTP/* ~/Videos/youtube-term";
+	// string rmCMD = "ssh " + IP + " 'rm ~/youtube-term/v0.3.2/FTP/*'";
+	string scpCMD = "rsync " + IP + ":~/youtube-term/v0.3.2/FTP/* ~/Videos/youtube-term";
 	system("mkdir ~/Videos/youtube-term");
 	while(true){ // Litterally run the commands forever
 		system(scpCMD.c_str());
-		system(rmCMD.c_str());
+		// system(rmCMD.c_str());
 		system("sleep 180");
 	}
 	return 69; // This return should never be called... only interupts

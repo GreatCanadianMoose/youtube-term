@@ -85,11 +85,11 @@ int main(){
 		}
 
 			time(&finish);
-			string rum = "find . -maxdepth 1 -cmin "+ to_string((int)(difftime(start,finish)/60) - 2) + " -type f ! -name '*.txt' ! -name '*.cpp' ! -name '*.h'  ! -name 'youtube-dl' ! -name 'youtube-term' -print0 | xargs -0 cp -t ~/youtube-term/v0.3.2/FTP";
-//                        string rum =  "find . -cmin -" + to_string(difftime(start,finish)/60 + 1) + " -maxdepth 1 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -print0 | xargs -0 cp -t ~/youtube-term/v0.3.2/FTP";
-
-                        exec(rum);
-			exec("find . -mmin +1440 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'youtube-dl' ! -name 'youtube-term' -delete");
+			string cmd = R"(find FTP -mtime +2 -type f -delete)";
+//			string cmd1 = "find . -maxdepth 1 -cmin " + to_string((int)(difftime(start,finish)/60) - 2) + " -type f ! -name '*.txt' ! -name '*.cpp' ! -name '*.h'  ! -name 'yt-dlp' ! -name 'youtube-term' ! -name '*.part' ! -name '*.out'";
+//			string cmd2 = R"( -exec bash -c 'cp "$1" ~/youtube-term/v0.3.2/FTP && touch "$1"' _ {} \;)";
+//			exec(cmd1 + cmd2);
+//			exec("find . -mmin +1440 -type f ! -name '*.txt' ! -name '*.cpp' -name '*.h' ! -name 'yt-dlp' ! -name 'youtube-term' ! -name '*.part' ! -name '*.out' -delete");
 
 	}
 	return 0;
